@@ -15,7 +15,7 @@ public class calc extends Calc_func
         int option;
         do
         {
-            System.out.println("Menu:\n1.Add\t2.Sub\t3.Multiply\t4.Divide\t5.Exit");
+            System.out.println("Menu:\n1.Add\t2.Sub\t3.Multiply\t4.Divide\t5Loop 6.Exit");
             System.out.println("Enter the option :");
             option=s.nextInt();
             
@@ -38,7 +38,22 @@ public class calc extends Calc_func
                     Calc_func.div(a,b);
                     break;
 
-                case 5:return;
+                case 5:try
+		{
+		int n=in.nextInt();
+		int blank=1,space=n-1;
+		int line=1;
+		String x=new String("x");
+		System.out.println("");
+		calx(x,blank,space,n,line);
+		}
+		
+		finally {
+			in.close();
+		}
+		break;
+		case 6 :
+		    return;
                 default:System.out.println("Enter 1, 2 or 3:");
             }
         }while(option<4);
